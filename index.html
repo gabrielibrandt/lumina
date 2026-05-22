@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA | Streetwear Premium</title>
+    <meta name="description"
+        content="Descubra a LUMINA: streetwear premium em preto, branco e violeta obsidiana. Roupas minimalistas modernas com estética dark.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="navbar" id="top">
+        <div class="logo">LUMINA</div>
+        <nav>
+            <a href="#">Coleção</a>
+            <a href="#about">Sobre</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>DEFINA SUA <span class="glow-text">AURA</span></h1>
+        <p>Estética dark premium com tons de violeta exclusivos. Descubra a nova coleção, feita para os vanguardistas.
+        </p>
+    </section>
+
+    <main class="catalog">
+        <!-- Product 1 -->
+        <article class="product-card">
+            <div class="image-wrapper">
+                <img src="assets/purple_hoodie.png" alt="Moletom Violeta Obsidiana">
+            </div>
+            <div class="product-meta">
+                <h3>Moletom Violeta Obsidiana</h3>
+                <p class="tag">Agasalhos</p>
+                <a href="#modal-hoodie" class="btn">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card">
+            <div class="image-wrapper">
+                <img src="assets/black_jacket.png" alt="Jaqueta Techwear Ônix">
+            </div>
+            <div class="product-meta">
+                <h3>Jaqueta Techwear Ônix</h3>
+                <p class="tag">Agasalhos</p>
+                <a href="#modal-jacket" class="btn">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card">
+            <div class="image-wrapper">
+                <img src="assets/white_sneakers.png" alt="Tênis Aether">
+            </div>
+            <div class="product-meta">
+                <h3>Tênis Aether</h3>
+                <p class="tag">Calçados</p>
+                <a href="#modal-shoes" class="btn">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card">
+            <div class="image-wrapper">
+                <img src="assets/purple_backpack.png" alt="Mochila Nebula">
+            </div>
+            <div class="product-meta">
+                <h3>Mochila Nebula</h3>
+                <p class="tag">Acessórios</p>
+                <a href="#modal-bag" class="btn">Ver Detalhes</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="about">
+        <div class="footer-logo">LUMINA</div>
+        <p>&copy; 2026 LUMINA.</p>
+    </footer>
+
+    <!-- CSS-Only Modals -->
+    <!-- Modal 1 -->
+    <div id="modal-hoodie" class="modal">
+        <a href="#top" class="modal-overlay"></a>
+        <div class="modal-content">
+            <a href="#top" class="close-btn">&times;</a>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="assets/purple_hoodie.png" alt="Moletom Violeta Obsidiana - visão detalhada">
+                </div>
+                <div class="modal-info">
+                    <h2>Moletom Violeta Obsidiana</h2>
+                    <span class="badge">Novidade</span>
+                    <p class="desc">Um moletom moderno em roxo profundo, feito para os vanguardistas. Confeccionado em
+                        algodão premium pesado com estilo minimalista. Projetado para conforto e presença marcante.</p>
+                    <div class="features">
+                        <span>Respirável</span>
+                        <span>Anti-rugas</span>
+                        <span>Ombro caído</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal-jacket" class="modal">
+        <a href="#top" class="modal-overlay"></a>
+        <div class="modal-content">
+            <a href="#top" class="close-btn">&times;</a>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="assets/black_jacket.png" alt="Jaqueta Techwear Ônix - visão detalhada">
+                </div>
+                <div class="modal-info">
+                    <h2>Jaqueta Techwear Ônix</h2>
+                    <span class="badge">Limitado</span>
+                    <p class="desc">Uma jaqueta techwear preta e moderna, repleta de detalhes funcionais e sutis toques
+                        em branco e roxo. Capa resistente às intempéries com isolamento térmico avançado.</p>
+                    <div class="features">
+                        <span>Impermeável</span>
+                        <span>Modular</span>
+                        <span>Térmico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal-shoes" class="modal">
+        <a href="#top" class="modal-overlay"></a>
+        <div class="modal-content">
+            <a href="#top" class="close-btn">&times;</a>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="assets/white_sneakers.png" alt="Tênis Aether - visão detalhada">
+                </div>
+                <div class="modal-info">
+                    <h2>Tênis Aether</h2>
+                    <span class="badge">Essenciais</span>
+                    <p class="desc">Tênis modernos em branco impecável com amortecimento de alto retorno e detalhes neon
+                        em roxo. Entre no futuro sem nenhum compromisso.</p>
+                    <div class="features">
+                        <span>Responsivo</span>
+                        <span>Ultraleve</span>
+                        <span>Couro Vegano</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal-bag" class="modal">
+        <a href="#top" class="modal-overlay"></a>
+        <div class="modal-content">
+            <a href="#top" class="close-btn">&times;</a>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="assets/purple_backpack.png" alt="Mochila Nebula - visão detalhada">
+                </div>
+                <div class="modal-info">
+                    <h2>Mochila Nebula</h2>
+                    <span class="badge">Colaboração</span>
+                    <p class="desc">Uma mochila elegante e minimalista confeccionada em nylon balístico roxo profundo.
+                        Possui compartimentos acolchoados para todos os seus dispositivos do dia a dia.</p>
+                    <div class="features">
+                        <span>Capacidade 15L</span>
+                        <span>Bolso para Notebook</span>
+                        <span>Ergonômico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

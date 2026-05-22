@@ -1,0 +1,433 @@
+/* Core Variables */
+:root {
+  --bg-color: #050505;
+  --panel-bg: rgba(255, 255, 255, 0.03);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --text-main: #fcfcfc;
+  --text-muted: #888888;
+  --accent: #9D4EDD;
+  --accent-hover: #C77DFF;
+  --accent-glow: rgba(157, 78, 221, 0.3);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Gradients */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -20%;
+  right: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  border-bottom: 1px solid var(--panel-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 5, 5, 0.7);
+}
+
+.logo, .footer-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffffff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar nav a {
+  margin-left: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+.navbar nav a:hover {
+  color: var(--accent);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.glow-text {
+  color: var(--accent);
+  text-shadow: 0 0 25px var(--accent-glow);
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Product Catalog */
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 5% 5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  padding: 1.25rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+}
+
+.image-wrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  aspect-ratio: 4/5;
+  background: #0a0a0a;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card:hover .image-wrapper img {
+  transform: scale(1.08);
+}
+
+.product-meta h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.product-meta .tag {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.9rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(157, 78, 221, 0.5);
+  color: var(--text-main);
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  transition: border-color 0.3s ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--accent);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn:hover {
+  border-color: var(--accent-hover);
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+}
+
+/* CSS-Only Modals */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* This targets the modal ID when click on href="#modal-NAME" */
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: default;
+}
+
+.modal-content {
+  position: relative;
+  background: #080808;
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 950px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1001;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 25px 60px -12px rgba(0,0,0,0.8), 0 0 50px var(--accent-glow);
+}
+
+.modal:target .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: var(--text-muted);
+  line-height: 1;
+  z-index: 10;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.modal-image {
+  background: #000;
+  display: flex;
+  border-right: 1px solid var(--panel-border);
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(157, 78, 221, 0.15);
+  color: var(--accent-hover);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+  border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.modal-info .desc {
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.features span {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  transition: border-color 0.3s ease;
+}
+
+.features span:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-image {
+    min-height: 300px;
+    border-right: none;
+    border-bottom: 1px solid var(--panel-border);
+  }
+  .modal-info {
+    padding: 2rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--panel-border);
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Custom Scrollbar for Modal Text */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 0 24px 24px 0;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--panel-border);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
