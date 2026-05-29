@@ -137,4 +137,4 @@ Sinta-se livre para utilizar como inspiração e material de estudo.
 
 # 👨‍💻 Autor
 
-Projeto desenvolvido para apresentação acadêmica com foco em prototipação, front-end e validação de ideias digitais.
+Projeto desenvolvido por Gabrieli Brandt para apresentação acadêmica com foco em prototipação, front-end e validação de ideias digitais.
